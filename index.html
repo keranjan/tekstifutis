@@ -107,13 +107,12 @@
   .slot-empty .se-plus{font-size:13px; line-height:1; opacity:.8;}
 
   /* UUSI PELAAJAKORTTI */
-  .slot-card{width:82px; border-radius:10px; padding:5px 5px 6px; background:#0b1a13; border:1.5px solid var(--cardc,#9ca3af); box-shadow:0 4px 12px -3px rgba(0,0,0,.65); position:relative;}
-  .sc-top{display:flex; align-items:center; gap:4px; margin-bottom:4px;}
-  .sc-role{font-family:'Oswald'; font-weight:700; font-size:9px; line-height:1; padding:2px 4px; border-radius:3px; flex-shrink:0; letter-spacing:.2px;}
-  .sc-name{font-size:10.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0;}
+  .slot-card{width:88px; border-radius:10px; padding:5px 6px 6px; background:#0b1a13; border:1.5px solid var(--cardc,#9ca3af); box-shadow:0 4px 12px -3px rgba(0,0,0,.65); position:relative;}
+  .sc-name{font-size:11px; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.15; margin-bottom:3px; text-align:center;}
   .sc-body{display:flex; align-items:center; gap:6px;}
-  .sc-ovr{font-family:'Oswald'; font-weight:700; font-size:28px; line-height:.85; color:var(--cardc); flex-shrink:0;}
-  .sc-attrs{display:flex; flex-direction:column; gap:2px; flex:1; min-width:0;}
+  .sc-ovr{font-family:'Oswald'; font-weight:700; font-size:27px; line-height:.85; color:var(--cardc); flex-shrink:0;}
+  .sc-attrs{display:flex; flex-direction:column; gap:1px; flex:1; min-width:0;}
+  .sc-role{align-self:stretch; font-family:'Oswald'; font-weight:700; font-size:8px; line-height:1; padding:2px 0; border-radius:3px; text-align:center; margin-bottom:2px; letter-spacing:.3px;}
   .sc-chip{display:flex; justify-content:space-between; gap:3px; font-size:9px; font-weight:700; color:var(--muted); line-height:1.25;}
   .sc-chip .v{color:var(--text);}
   .sc-warn{position:absolute; top:-7px; right:-6px; width:17px; height:17px; border-radius:50%; background:var(--warn); color:#1a0606; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; line-height:1; z-index:2;}
@@ -545,8 +544,8 @@ function cardHTML(p,off){
   const c=RAR[p.harvinaisuus].vari;
   const chips=KEY_ATTRS[p.paikka].map(a=>`<div class="sc-chip"><span>${ATTR_LYHYT[a]}</span><span class="v">${p[a]}</span></div>`).join('');
   return `<div class="slot-card" style="--cardc:${c}">${off?'<div class="sc-warn">!</div>':''}
-    <div class="sc-top"><span class="sc-role pos-${p.paikka}">${ROOLI_LYHYT[p.paikka]}</span><span class="sc-name">${sur(p)}</span></div>
-    <div class="sc-body"><div class="sc-ovr">${ovr(p)}</div><div class="sc-attrs">${chips}</div></div></div>`;
+    <div class="sc-name">${sur(p)}</div>
+    <div class="sc-body"><div class="sc-ovr">${ovr(p)}</div><div class="sc-attrs"><span class="sc-role pos-${p.paikka}">${ROOLI_LYHYT[p.paikka]}</span>${chips}</div></div></div>`;
 }
 function renderPitch(){
   const slots=FORMATIONS[state.formation].slots;
