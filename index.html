@@ -68,13 +68,12 @@
   .reveal-stats{display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; margin-top:14px; text-align:left;}
   .reveal-stats div{display:flex; justify-content:space-between; font-size:12px; color:var(--muted);}
   .reveal-stats b{color:var(--text); font-family:'Oswald'; font-weight:600;}
-  .role-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:4px;}
-  .role-btn{padding:12px 8px; border-radius:11px; border:1px solid var(--line); background:var(--panel); cursor:pointer; display:flex; align-items:center; gap:9px; transition:transform .08s, border-color .15s;}
+  .role-grid{display:flex; flex-direction:column; gap:8px; margin-top:4px;}
+  .role-btn{padding:11px 12px; border-radius:11px; border:1px solid var(--line); background:var(--panel); cursor:pointer; display:flex; align-items:center; gap:11px; transition:transform .08s, border-color .15s;}
   .role-btn:active{transform:scale(.98);}
   .role-btn .rb-pos{width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:'Oswald'; font-weight:700; font-size:12px; flex-shrink:0;}
-  .role-btn .rb-tx{text-align:left; line-height:1.2;}
-  .role-btn .rb-name{font-family:'Oswald'; font-weight:600; font-size:14px;}
-  .role-btn .rb-cost{font-size:11px; color:var(--gold); font-weight:600;}
+  .role-btn .rb-name{font-family:'Oswald'; font-weight:600; font-size:15px; flex:1; min-width:0; text-align:left;}
+  .role-btn .rb-cost{margin-left:auto; flex-shrink:0; font-size:12px; color:var(--gold); font-weight:700; background:#1c1708; border:1px solid #5a4a12; padding:3px 9px; border-radius:7px; white-space:nowrap;}
 
   .teamname-row{display:flex; align-items:center; gap:8px; margin-bottom:14px;}
   .teamname-row label{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; flex-shrink:0;}
@@ -108,14 +107,14 @@
   .slot-empty .se-plus{font-size:13px; line-height:1; opacity:.8;}
 
   /* UUSI PELAAJAKORTTI */
-  .slot-card{width:72px; border-radius:9px; padding:4px 4px 5px; background:#0b1a13; border:1.5px solid var(--cardc,#9ca3af); box-shadow:0 4px 12px -3px rgba(0,0,0,.65); position:relative;}
-  .sc-top{display:flex; align-items:center; gap:3px; margin-bottom:3px;}
-  .sc-role{font-family:'Oswald'; font-weight:700; font-size:8px; line-height:1; padding:2px 3px; border-radius:3px; flex-shrink:0; letter-spacing:.2px;}
-  .sc-name{font-size:9px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0;}
-  .sc-body{display:flex; align-items:center; gap:5px;}
-  .sc-ovr{font-family:'Oswald'; font-weight:700; font-size:24px; line-height:.85; color:var(--cardc); flex-shrink:0;}
-  .sc-attrs{display:flex; flex-direction:column; gap:1px; flex:1; min-width:0;}
-  .sc-chip{display:flex; justify-content:space-between; gap:3px; font-size:7.5px; font-weight:700; color:var(--muted); line-height:1.25;}
+  .slot-card{width:82px; border-radius:10px; padding:5px 5px 6px; background:#0b1a13; border:1.5px solid var(--cardc,#9ca3af); box-shadow:0 4px 12px -3px rgba(0,0,0,.65); position:relative;}
+  .sc-top{display:flex; align-items:center; gap:4px; margin-bottom:4px;}
+  .sc-role{font-family:'Oswald'; font-weight:700; font-size:9px; line-height:1; padding:2px 4px; border-radius:3px; flex-shrink:0; letter-spacing:.2px;}
+  .sc-name{font-size:10.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0;}
+  .sc-body{display:flex; align-items:center; gap:6px;}
+  .sc-ovr{font-family:'Oswald'; font-weight:700; font-size:28px; line-height:.85; color:var(--cardc); flex-shrink:0;}
+  .sc-attrs{display:flex; flex-direction:column; gap:2px; flex:1; min-width:0;}
+  .sc-chip{display:flex; justify-content:space-between; gap:3px; font-size:9px; font-weight:700; color:var(--muted); line-height:1.25;}
   .sc-chip .v{color:var(--text);}
   .sc-warn{position:absolute; top:-7px; right:-6px; width:17px; height:17px; border-radius:50%; background:var(--warn); color:#1a0606; font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; line-height:1; z-index:2;}
   .pos-MV{background:#fbbf24; color:#1a1404;} .pos-P{background:#3b82f6; color:#fff;} .pos-K{background:#2ee06a; color:#07140c;} .pos-H{background:#ef4444; color:#fff;}
@@ -125,9 +124,9 @@
   .subcell.drop-hi{border-color:var(--grass)!important; border-style:solid!important; background:rgba(46,224,106,.12)!important;}
   #bench-area.drop-hi-zone{outline:2px dashed var(--grass); outline-offset:5px; border-radius:12px;}
   .drag-ghost{position:fixed; z-index:90; pointer-events:none; transform:translate(-50%,-50%); opacity:.95;}
-  .ghost-card{width:66px; border-radius:9px; padding:4px; text-align:center; background:#0b1a13; border:1.5px solid var(--cardc,#9ca3af); box-shadow:0 10px 24px rgba(0,0,0,.7);}
-  .ghost-card .gc-ovr{font-family:'Oswald'; font-weight:700; font-size:18px; color:var(--cardc);}
-  .ghost-card .gc-name{font-size:9px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .ghost-card{width:74px; border-radius:9px; padding:5px; text-align:center; background:#0b1a13; border:1.5px solid var(--cardc,#9ca3af); box-shadow:0 10px 24px rgba(0,0,0,.7);}
+  .ghost-card .gc-ovr{font-family:'Oswald'; font-weight:700; font-size:20px; color:var(--cardc);}
+  .ghost-card .gc-name{font-size:10px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 
   .hint{font-size:11px; color:var(--muted); text-align:center; margin:8px 0 14px; line-height:1.6;}
   .hint .warn-i{color:var(--warn); font-weight:700;}
@@ -150,7 +149,9 @@
 
   /* KOKOELMA */
   .plist{display:flex; flex-direction:column; gap:8px;}
-  .prow{display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:11px; background:var(--panel); border:1px solid var(--line); cursor:pointer;}
+  .prow{display:flex; align-items:center; gap:11px; padding:10px 12px; border-radius:11px; background:var(--panel); border:1px solid var(--line); cursor:grab; user-select:none; -webkit-user-select:none; touch-action:none;}
+  .prow:active{cursor:grabbing;}
+  body.dragging, body.dragging *{user-select:none !important; -webkit-user-select:none !important; cursor:grabbing !important;}
   .pos-badge{flex-shrink:0; width:34px; height:34px; border-radius:9px; display:flex; align-items:center; justify-content:center; font-family:'Oswald'; font-weight:700; font-size:13px;}
   .pinfo{flex:1; min-width:0;}
   .pinfo .pn{font-weight:600; font-size:14px; display:flex; align-items:center; gap:7px;}
@@ -245,7 +246,7 @@
       <p class="sub">Kirjaa tekemäsi treeni ja ansaitse jalkapalloja. Niillä vedät uusia pelaajia.</p>
       <div class="card">
         <div class="train-meta">
-          <div><div class="big-num">+10</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">jalkapalloa / treeni</div></div>
+          <div><div class="big-num">+50</div><div style="font-size:12px;color:var(--muted);margin-top:2px;">jalkapalloa / treeni</div></div>
           <div class="daycount">Päivä<b id="t-day">1</b></div>
         </div>
         <div class="dots" id="t-dots"></div>
@@ -321,13 +322,13 @@ const KEY_ATTRS={MV:['puolustus','fyysisyys'],P:['puolustus','fyysisyys'],K:['sy
 
 const FORMATIONS={
  '1-3-3-1':{slots:[{role:'MV',x:50,y:90},{role:'P',x:24,y:70},{role:'P',x:50,y:73},{role:'P',x:76,y:70},{role:'K',x:24,y:45},{role:'K',x:50,y:43},{role:'K',x:76,y:45},{role:'H',x:50,y:19}]},
- '1-2-4-1':{slots:[{role:'MV',x:50,y:90},{role:'P',x:33,y:71},{role:'P',x:67,y:71},{role:'K',x:13,y:47},{role:'K',x:38,y:48},{role:'K',x:62,y:48},{role:'K',x:87,y:47},{role:'H',x:50,y:19}]},
+ '1-2-4-1':{slots:[{role:'MV',x:50,y:90},{role:'P',x:33,y:71},{role:'P',x:67,y:71},{role:'K',x:12,y:47},{role:'K',x:37,y:48},{role:'K',x:63,y:48},{role:'K',x:88,y:47},{role:'H',x:50,y:19}]},
  '1-2-3-2':{slots:[{role:'MV',x:50,y:90},{role:'P',x:35,y:72},{role:'P',x:65,y:72},{role:'K',x:22,y:47},{role:'K',x:50,y:45},{role:'K',x:78,y:47},{role:'H',x:36,y:20},{role:'H',x:64,y:20}]},
  '1-3-2-2':{slots:[{role:'MV',x:50,y:90},{role:'P',x:24,y:72},{role:'P',x:50,y:74},{role:'P',x:76,y:72},{role:'K',x:36,y:47},{role:'K',x:64,y:47},{role:'H',x:36,y:20},{role:'H',x:64,y:20}]},
 };
 
 /* ═══ TILA ═══ */
-const PAKETTI_HINTA=50, ROOLI_HINTA=75, TREENI_PALKKIO=10, MAX_TREENIT=2, SUB_SLOTS=3;
+const PAKETTI_HINTA=50, ROOLI_HINTA=75, TREENI_PALKKIO=50, MAX_TREENIT=2, SUB_SLOTS=3;
 const state={ footballs:120, day:1, trainingsToday:0, pity:0, collection:[], formation:'1-3-3-1', placements:new Array(8).fill(null), subs:new Array(SUB_SLOTS).fill(null), teamName:'Oma joukkue' };
 const getPlayer=id=>state.collection.find(p=>p.id===id)||null;
 const sur=p=>p.nimi.split(' ')[1]||p.nimi;
@@ -502,7 +503,7 @@ function seuraavaPaiva(){state.day++;state.trainingsToday=0;renderTreeni();toast
 /* ═══ VETO ═══ */
 function renderPity(){const j=10-state.pity;$('#pity-note').textContent=`Takuu: ${j} veto${j===1?'':'a'} seuraavaan vähintään harvinaiseen.`;}
 function renderRoleGrid(){
-  $('#role-grid').innerHTML=['MV','P','K','H'].map(role=>`<button class="role-btn" data-role="${role}"><span class="rb-pos pos-${role}">${role}</span><span class="rb-tx"><span class="rb-name">${PAIKAT[role]}</span><span class="rb-cost">${ROOLI_HINTA} ⚽</span></span></button>`).join('');
+  $('#role-grid').innerHTML=['MV','P','K','H'].map(role=>`<button class="role-btn" data-role="${role}"><span class="rb-pos pos-${role}">${role}</span><span class="rb-name">${PAIKAT[role]}</span><span class="rb-cost">${ROOLI_HINTA} ⚽</span></button>`).join('');
   $('#role-grid').querySelectorAll('[data-role]').forEach(b=>b.onclick=()=>vedaPaketti(b.dataset.role,ROOLI_HINTA));
 }
 function vedaPaketti(forcedRole,cost){
@@ -581,8 +582,7 @@ function renderBench(){
   html+= bench.length? `<div class="plist">${bench.map(prowBench).join('')}</div>` : `<div class="empty" style="padding:14px;"><div style="font-size:13px;">Kaikki pelaajasi ovat kentällä tai vaihtopenkillä.</div></div>`;
   area.innerHTML=html;
   area.querySelectorAll('.prow').forEach(row=>{const pid=+row.dataset.pid;
-    row.onclick=()=>{ if(row._suppress){row._suppress=false;return;} openDetail(pid); };
-    makeDraggable(row.querySelector('.grip'),{pid,row});});
+    makeDraggable(row,{pid,tap:()=>openDetail(pid)});});
 }
 function prowBench(p){
   const r=RAR[p.harvinaisuus]; const ka=KEY_ATTRS[p.paikka].map(a=>`${ATTR_LYHYT[a]} ${p[a]}`).join(' · ');
@@ -598,6 +598,7 @@ const DRAG_THRESH=6; let drag=null;
 function makeDraggable(el,info){ el.addEventListener('pointerdown',e=>onDragDown(e,el,info)); }
 function onDragDown(e,el,info){
   if(e.pointerType==='mouse'&&e.button!==0) return;
+  e.preventDefault();
   drag={...info,el,pointerId:e.pointerId,startX:e.clientX,startY:e.clientY,dragging:false,canceled:false,ghost:null,target:null};
   try{el.setPointerCapture(e.pointerId);}catch(_){}
   el.addEventListener('pointermove',onDragMove); el.addEventListener('pointerup',onDragUp); el.addEventListener('pointercancel',onDragUp);
@@ -607,7 +608,9 @@ function onDragMove(e){
   if(!drag.dragging){
     if(Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)<DRAG_THRESH) return;
     if(!drag.pid){drag.canceled=true;return;}
-    drag.dragging=true; createGhost();
+    drag.dragging=true; document.body.classList.add('dragging');
+    const sel=window.getSelection&&window.getSelection(); if(sel)try{sel.removeAllRanges();}catch(_){}
+    createGhost();
   }
   e.preventDefault();
   drag.ghost.style.left=e.clientX+'px'; drag.ghost.style.top=e.clientY+'px'; updateTarget(e.clientX,e.clientY);
@@ -616,7 +619,8 @@ function onDragUp(){
   if(!drag) return; const el=drag.el;
   el.removeEventListener('pointermove',onDragMove); el.removeEventListener('pointerup',onDragUp); el.removeEventListener('pointercancel',onDragUp);
   try{el.releasePointerCapture(drag.pointerId);}catch(_){}
-  if(drag.dragging){ performDrop(); if(drag.ghost)drag.ghost.remove(); clearDropHi(); if(drag.row)drag.row._suppress=true; }
+  document.body.classList.remove('dragging');
+  if(drag.dragging){ performDrop(); if(drag.ghost)drag.ghost.remove(); clearDropHi(); }
   else if(!drag.canceled && typeof drag.tap==='function'){ drag.tap(); }
   drag=null;
 }
@@ -724,10 +728,13 @@ $('#teamname').addEventListener('input',e=>{state.teamName=e.target.value.trim()
 
 /* ═══ ALOITUS ═══ */
 function annaAloitus(){
-  const r=Math.random; ['MV','P','P','K','K','H','K'].forEach(paikka=>{
-    const harv=r()<0.25?'harvinainen':'tavallinen'; const[lo,hi]=RAR[harv].vali;
+  const r=Math.random; ['MV','P','P','P','K','K','K','H','H'].forEach(paikka=>{
+    const harv='tavallinen'; const[lo,hi]=RAR[harv].vali;
     const p={id:uid(),nimi:arvoNimi(r),paikka,harvinaisuus:harv}; ATTRS.forEach(a=>p[a]=lo+Math.floor(r()*(hi-lo+1)));
-    if(paikka==='MV')p.puolustus=clamp(p.puolustus+8,1,99); if(paikka==='H')p.laukaus=clamp(p.laukaus+8,1,99);
+    if(paikka==='MV'){p.puolustus=clamp(p.puolustus+8,1,99);p.fyysisyys=clamp(p.fyysisyys+5,1,99);}
+    if(paikka==='P')p.puolustus=clamp(p.puolustus+8,1,99);
+    if(paikka==='K')p.syotto=clamp(p.syotto+8,1,99);
+    if(paikka==='H')p.laukaus=clamp(p.laukaus+8,1,99);
     state.collection.push(p);
   });
   state.placements=autoFit([...state.collection]);
